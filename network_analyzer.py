@@ -122,7 +122,7 @@ def sort_nodes_by_traffic(graph):
         ip = graph.id_to_ip[node_id]
         total = graph.get_node_total_traffic(node_id)
         nodes.append((ip, total))
-    return sorted(nodes, key=lambda x: x[1], reverse=True)
+    return sorted(nodes, key=lambda x: (-x[1], x[0]))
 
 
 def filter_https_nodes(sessions, graph):
