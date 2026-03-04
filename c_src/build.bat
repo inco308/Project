@@ -28,7 +28,7 @@ REM Check for cl (MSVC)
 where cl >nul 2>&1
 if %ERRORLEVEL% EQU 0 (
     echo Using MSVC...
-    cl /O2 /Fe:../network_analyzer.exe ^
+    cl /O2 /std:c11 /Fe:../network_analyzer.exe ^
         hash_map.c dynamic_array.c csr_graph.c csv_reader.c analysis.c main.c
     if %ERRORLEVEL% EQU 0 (
         echo Build successful!
